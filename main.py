@@ -7,8 +7,9 @@ from fastapi import FastAPI
 app = FastAPI(title='Proyecto N°01: Machine Learning Operations (MLOps)',
               description='Elaborado por: Mauricio Bernal DSPT-02')
 
-#Definimos dataset
+#Definimos los datasets
 df = pd.read_csv('movies_final.csv')
+df_modelo = pd.read_csv('recomendaciones.csv')
 
 #FUNCIONES
 
@@ -126,3 +127,15 @@ def get_director(nombre_director:str):
         'retorno_total_director': retorno,
         'peliculas': peliculas_info
         }
+
+
+#MODELO DE RECOMENDACIÓN - ML
+
+#La siguiente función accede a un dataset creado a partir del modelo de similitud de coseno
+
+@app.get('/recomendacion/{titulo}')
+def recomendacion(titulo:str):
+    '''Ingresas un nombre de pelicula y te recomienda las similares en una lista'''
+    #Creamos mascara para buscar la pelicula 
+    recomendaciones = df_modelo[df_modelo['Pelicula'] == titulo]['Recomendaciones'].values[0]
+    return {'lista recomendada': recomendaciones}
