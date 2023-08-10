@@ -107,7 +107,7 @@ def get_director(nombre_director:str):
         return f'No se encontraron películas del director {nombre_director}.'
 
     #Calcular el éxito total del director sumando el retorno de todas sus películas
-    retorno = peliculas_director['return'].sum()
+    retorno = peliculas_director['revenue'].sum()/peliculas_director['budget'].sum()
 
     # Obtener información detallada de cada película
     peliculas_info = []
