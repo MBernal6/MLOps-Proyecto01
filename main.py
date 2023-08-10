@@ -28,7 +28,7 @@ def peliculas_idioma(idioma:str):
 
 
 #2. Duración y año de estreno de una pelicula 
-    
+
 @app.get('/peliculas_duracion/{pelicula}')
 def peliculas_duracion(pelicula:str):
     '''Ingresas la pelicula, retornando la duracion y el año'''
@@ -36,8 +36,8 @@ def peliculas_duracion(pelicula:str):
     pelicula_buscada = df[df['title'] == pelicula]
 
     #Extraemos los valores de las columnas necesaria
-    duracion = pelicula_buscada['runtime'].values[0]
-    anio = pelicula_buscada['release_year'].values[0]
+    duracion = int(pelicula_buscada['runtime'].values[0])
+    anio = int(pelicula_buscada['release_year'].values[0])
 
     return {'pelicula':pelicula, 'duracion':duracion, 'anio':anio}
 
