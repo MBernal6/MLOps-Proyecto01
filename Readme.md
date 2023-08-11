@@ -102,6 +102,7 @@ _Las herramientas para la creación del proyecto fueron las siguientes:_
 ## Autor ✒️
 
 * **Mauricio Bernal** - *Proyecto Individual N°01-Labs HENRY* - [MBernal6](https://github.com/MBernal6)
+* *Puedes contactarme a través de* [LinkedIn](https://www.linkedin.com/in/mauricio-bernal-portocarrero/)
 
 ## Expresiones de Gratitud 🎁
 
